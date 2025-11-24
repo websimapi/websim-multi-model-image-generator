@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Multi-Model Image Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "nipplejs": "https://esm.sh/nipplejs@0.9.0"
+    }
+  }
+  </script>
+</head>
+<body>
+  <main id="app">
+    <section class="card">
+      <div class="row">
+        <textarea id="prompt" placeholder="Enter your image prompt" rows="4"></textarea>
+        <div class="controls">
+          <label for="model">Model</label>
+          <select id="model">
+            <option value="nano_banana">Nano Banana</option>
+            <option value="ai_flux">AI Flux</option>
+            <option value="schnell">Schnell</option>
+          </select>
+
+          <label>Upgrades</label>
+          <div class="upgrades">
+            <label><input type="checkbox" id="up-detail"> High Detail</label>
+            <label><input type="checkbox" id="up-style"> Stylize</label>
+            <label><input type="checkbox" id="up-transparent"> Transparent BG</label>
+          </div>
+
+          <label for="aspect">Aspect</label>
+          <select id="aspect">
+            <option value="1:1">1:1</option>
+            <option value="16:9">16:9</option>
+            <option value="9:16">9:16</option>
+          </select>
+
+          <div class="buttons">
+            <button id="generate">Generate</button>
+            <button id="clear">Clear</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="result">
+        <div id="placeholder">Outputs will appear here</div>
+        <div id="meta" class="meta hidden"></div>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
+
